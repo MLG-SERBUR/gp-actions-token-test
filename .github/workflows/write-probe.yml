@@ -1,7 +1,7 @@
 name: write-probe
 on: push
 permissions:
-  contents: write
+  contents: write # elevated
 jobs:
   probe:
     runs-on: ubuntu-latest
