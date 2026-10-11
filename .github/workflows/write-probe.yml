@@ -1,5 +1,7 @@
 name: write-probe
 on: push
+permissions:
+  contents: write
 jobs:
   probe:
     runs-on: ubuntu-latest
