@@ -1,0 +1,15 @@
+name: write-probe
+on: push
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: attempt repo write with default token
+        run: |
+          git config user.email "probe@test.local"
+          git config user.name "probe"
+          echo probe > ci-write-probe.txt
+          git add ci-write-probe.txt
+          git commit -m "ci write attempt"
+          git push origin HEAD:ci-write-probe
